@@ -65,21 +65,17 @@ class LoginController extends Controller
                 ->select('userId', 'role', 'username', 'mobile')
                 ->where(['emailId'=>$req->emailId, 'pwd'=>$req->pwd])
                 ->get();
-                if(!empty($user)){
-                    // print_r($user);die();
+                if(!empty($user[0])){
+                    print_r($user);die();
                     Session::put('user', ['userId'=>$user[0]->userId, 'role'=>$user[0]->role, 'userName'=>$user[0]->username, 'mobile'=>$user[0]->mobile]);
-                    if(isset($req->remeberMe)){
-                        // setcookie('login_email', $req->emailId);
-                        // setcookie('login_pwd', $req->pwd);                
-                    }else{
-                        // setcookie('login_email', '');
-                        // setcookie('login_pwd', '');
-                    }
+                    
                     if($user[0]->role == 'user'){                        
                         return redirect()->route('Dashboard');
                     }else if($user[0]->role == 'admin'){
                         return redirect()->route('AdminDashboard');
                     }                
+                }else{
+                    return redirect()->back()->withErrors(array('errors'=>'Oops! Something went wrong'));
                 }
             }
         }
