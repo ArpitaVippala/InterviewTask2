@@ -30,7 +30,7 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Login to start your session</p>
+      <p class="login-box-msg">Register to start your session</p>
         @if($errors->any())
           <div class="alert alert-danger" role="alert">
                 <ul>

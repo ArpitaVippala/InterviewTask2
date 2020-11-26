@@ -70,7 +70,7 @@ class LoginController extends Controller
                     Session::put('user', ['userId'=>$user[0]->userId, 'role'=>$user[0]->role, 'userName'=>$user[0]->username, 'mobile'=>$user[0]->mobile]);
                     
                     if($user[0]->role == 'user'){                        
-                        return redirect()->route('Dashboard');
+                        return redirect()->route('Posts');
                     }else if($user[0]->role == 'admin'){
                         return redirect()->route('AdminDashboard');
                     }                
