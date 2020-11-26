@@ -66,7 +66,7 @@ class LoginController extends Controller
                 ->where(['emailId'=>$req->emailId, 'pwd'=>$req->pwd])
                 ->get();
                 if(!empty($user[0])){
-                    print_r($user);die();
+                    // print_r($user);die();
                     Session::put('user', ['userId'=>$user[0]->userId, 'role'=>$user[0]->role, 'userName'=>$user[0]->username, 'mobile'=>$user[0]->mobile]);
                     
                     if($user[0]->role == 'user'){                        

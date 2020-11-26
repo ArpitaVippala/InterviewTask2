@@ -293,7 +293,7 @@
         dom: 'Bfrtip',
         buttons:['csvHtml5']
       });
-      $("#butt").click(function(){
+      /*$("#butt").click(function(){
             $name = $("#fullName").val();
             $email = $("#email").val();
             $mobile = $("#mobile").val();
@@ -325,7 +325,7 @@
                 }
             });
         
-      });
+      });*/
       $("#userForm").validate({
         rules:{
             fullName:{
@@ -356,31 +356,33 @@
 
       $("#userForm1").validate({
         rules:{
-            fullName:{
+          editfullName:{
                 required:true
             },
-            email:{
+            editemail:{
                 required:true
             },
-            mobile:{
+            editmobile:{
                 required:true
             },
-            pwd:{
-                required:true
+            editPwd:{
+                required:true,
+                minlength: 8
             },
         },
         messages:{
-            fullName:{
+            editfullName:{
                 required:"Please enter full name"
             },
-            email:{
+            editemail:{
                 required:"Please enter email"
             },
-            mobile:{
+            editmobile:{
                 required:"Please enter mobile"
             },
-            pwd:{
-                required:"Please enter password"
+            editPwd:{
+                required:"Please enter password",
+                minlength:"Password must be minimum 8 digits"
             },
         },
         submitHandler:function(){
