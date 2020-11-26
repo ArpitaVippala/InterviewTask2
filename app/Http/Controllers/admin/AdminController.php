@@ -102,7 +102,7 @@ class AdminController extends Controller{
             $user = new UsersModel();
             $user->username = $req->fullName;
             $user->emailId = $req->email;
-            $user->pwd = '123456789';
+            $user->pwd = $req->pwd;
             $user->mobile = $req->mobile;
             $user->role = 'user';
             $user->created_at = date('Y-m-d H:i:s');

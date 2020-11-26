@@ -23,16 +23,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <span>{!! session('admin')['role'] !!}</span>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{asset('logout/user')}}" role="button">
-          Logout  
-          </a>
-        </li>
-      </ul>
+      
     </nav>
     <!-- /.navbar -->
 

@@ -32,16 +32,6 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <span>{!! session('admin')['role'] !!}</span>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{asset('logout/user')}}" role="button">
-          Logout  
-          </a>
-        </li>
-      </ul>
       
     </nav>
     <!-- /.navbar -->
@@ -80,7 +70,7 @@
                     
                         <table id="empTable" class="table">
                             <thead>
-                                <th>Emp Name</th>
+                                <th>Name</th>
                                 <th>Email</th>
                                 <th>Mobile</th>
                                 <th>Action</th>
@@ -129,7 +119,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-      <h4 class="modal-title">New Employee</h4>
+      <h4 class="modal-title">New User</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         
       </div>
@@ -160,13 +150,13 @@
                                 <input type="text" class="form-control" id="mobile" name="mobile">
                                 </div>
                             </div>
-                            <!--<div class="form-group row">
-                                <label for="designation" class="col-sm-3 col-form-label">Designation</label>
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-3 col-form-label">Password</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="designation" name="designation">
+                                <input type="password" class="form-control" id="pwd" name="pwd">
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!--<div class="form-group row">
                                 <label for="salary" class="col-sm-3 col-form-label">salary</label>
                                 <div class="col-sm-10">
                                 <input type="text" class="form-control" id="salary" name="salary">
@@ -375,6 +365,9 @@
             mobile:{
                 required:true
             },
+            pwd:{
+                required:true
+            },
         },
         messages:{
             fullName:{
@@ -385,6 +378,9 @@
             },
             mobile:{
                 required:"Please enter mobile"
+            },
+            pwd:{
+                required:"Please enter password"
             },
         },
         submitHandler:function(){
